@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="title-section">
+                    <i class="fas fa-robot"></i>
+                    <h1>RAG Chat Assistant</h1>
+                </div>
+                <div class="status-section">
+                    <div id="status-indicator" class="status-indicator loading">
+                        <i class="fas fa-circle"></i>
+                        <span id="status-text">Initializing...</span>
+                    </div>
+                    <button id="info-btn" class="info-btn" title="System Information">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chat-messages">
+            <div class="welcome-message">
+                <div class="bot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <h3>Welcome to RAG Chat Assistant! 🤖</h3>
+                    <p>I'm here to help you explore and understand your documents. Here's what I can do:</p>
+                    <ul>
+                        <li>📚 Answer questions about your document content</li>
+                        <li>🔍 Find relevant information across multiple documents</li>
+                        <li>📊 Provide source references for my answers</li>
+                        <li>💡 Explain complex topics from your documents</li>
+                    </ul>
+                    <p><strong>Getting Started:</strong></p>
+                    <ul>
+                        <li>Wait for the system to finish loading your documents</li>
+                        <li>Ask any question about your content</li>
+                        <li>Click on source documents to see where answers come from</li>
+                    </ul>
+                    <div class="example-queries">
+                        <p><strong>Try asking:</strong></p>
+                        <div class="example-query" onclick="setQuery(this.textContent)">
+                            "What are the main topics in the documents?"
+                        </div>
+                        <div class="example-query" onclick="setQuery(this.textContent)">
+                            "Summarize the key findings"
+                        </div>
+                        <div class="example-query" onclick="setQuery(this.textContent)">
+                            "Tell me about machine learning techniques mentioned"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <textarea 
+                    id="user-input" 
+                    placeholder="Ask me anything about your documents..." 
+                    disabled
+                    rows="1"
+                ></textarea>
+                <button id="send-btn" class="send-btn" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="powered-by">Powered by Traditional RAG • Press Enter to send</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- System Info Modal -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-info-circle"></i> System Information</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    Loading system information...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
