@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic RAG - Hotel Food Sales Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: flex;
+            height: 600px;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #fafafa;
+        }
+
+        .input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+        }
+
+        .status-card.ready {
+            border-left-color: #28a745;
+        }
+
+        .status-card.error {
+            border-left-color: #dc3545;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .message.user {
+            background: #007bff;
+            color: white;
+            margin-left: auto;
+        }
+
+        .message.agent {
+            background: white;
+            border: 1px solid #e9ecef;
+            margin-right: auto;
+        }
+
+        .message.agent.gatekeeper { border-left: 4px solid #ffc107; }
+        .message.agent.planner { border-left: 4px solid #17a2b8; }
+        .message.agent.retriever { border-left: 4px solid #6f42c1; }
+        .message.agent.auditor { border-left: 4px solid #fd7e14; }
+        .message.agent.strategist { border-left: 4px solid #28a745; }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .query-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .send-btn {
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .send-btn:hover {
+            background: #0056b3;
+        }
+
+        .send-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .example-queries {
+            margin-top: 20px;
+        }
+
+        .example-query {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .example-query:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+        }
+
+        .insights {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f4f8;
+            border-radius: 8px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .insights h4 {
+            color: #0c5460;
+            margin-bottom: 8px;
+        }
+
+        .insights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .insights li {
+            padding: 4px 0;
+            color: #0c5460;
+        }
+
+        .insights li:before {
+            content: "💡 ";
+            margin-right: 8px;
+        }
+
+        .agents-used {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .agent-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e9ecef;
+            border-radius: 12px;
+            margin-right: 5px;
+            font-size: 11px;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #007bff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .sales-overview {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .sales-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sales-stat:last-child {
+            border-bottom: none;
+        }
+
+        .answer-content {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .answer-content h3 {
+            color: #2c3e50;
+            margin: 15px 0 8px 0;
+            font-size: 1.1em;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 5px;
+        }
+
+        .answer-content h4 {
+            color: #34495e;
+            margin: 12px 0 6px 0;
+            font-size: 1em;
+        }
+
+        .answer-content h5 {
+            color: #5a6c7d;
+            margin: 10px 0 4px 0;
+            font-size: 0.9em;
+        }
+
+        .answer-content strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .answer-content em {
+            color: #5a6c7d;
+            font-style: italic;
+        }
+
+        .answer-content br + br {
+            line-height: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Agentic RAG System</h1>
+            <p>Advanced Hotel Food Sales Analysis with Multi-Agent Intelligence</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="status-card" id="statusCard">
+                    <h3>System Status</h3>
+                    <p id="statusText">Initializing...</p>
+                    <div id="statusDetails"></div>
+                </div>
+
+                <div class="sales-overview" id="salesOverview" style="display: none;">
+                    <h3>📊 Sales Overview</h3>
+                    <div id="salesStats"></div>
+                </div>
+
+                <div class="example-queries">
+                    <h3>💡 Example Queries</h3>
+                    <div class="example-query" onclick="sendQuery('What are the top 5 best-selling menu items by revenue?')">
+                        What are the top 5 best-selling menu items by revenue?
+                    </div>
+                    <div class="example-query" onclick="sendQuery('How do weekend sales compare to weekday sales?')">
+                        How do weekend sales compare to weekday sales?
+                    </div>
+                    <div class="example-query" onclick="sendQuery('Which customers are most valuable to our business?')">
+                        Which customers are most valuable to our business?
+                    </div>
+                    <div class="example-query" onclick="sendQuery('What are the peak hours for restaurant operations?')">
+                        What are the peak hours for restaurant operations?
+                    </div>
+                    <div class="example-query" onclick="sendQuery('How can we optimize our menu pricing strategy?')">
+                        How can we optimize our menu pricing strategy?
+                    </div>
+                    <div class="example-query" onclick="sendQuery('What menu items should we promote or discontinue?')">
+                        What menu items should we promote or discontinue?
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-area">
+                <div class="messages" id="messages">
+                    <div class="message agent">
+                        <strong>🤖 Agentic Assistant</strong><br>
+                        Welcome to the Agentic RAG system! I'm powered by multiple specialized AI agents that work together to analyze your hotel food sales data. Ask me anything about your business performance, customer insights, or operational optimization.
+                    </div>
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Agents are analyzing your query...</p>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-container">
+                        <input type="text" id="queryInput" class="query-input" 
+                               placeholder="Ask about your hotel food sales data..." 
+                               onkeypress="handleKeyPress(event)">
+                        <button id="sendBtn" class="send-btn" onclick="sendUserQuery()">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isSystemReady = false;
+
+        // Check system status on load
+        window.onload = function() {
+            checkSystemStatus();
+            setInterval(checkSystemStatus, 5000);
+        };
+
+        function checkSystemStatus() {
+            fetch('/api/status')
+                .then(response => response.json())
+                .then(data => {
+                    const statusCard = document.getElementById('statusCard');
+                    const statusText = document.getElementById('statusText');
+                    const statusDetails = document.getElementById('statusDetails');
+                    
+                    statusText.textContent = data.status;
+                    isSystemReady = data.ready;
+                    
+                    if (data.ready) {
+                        statusCard.className = 'status-card ready';
+                        statusDetails.innerHTML = `
+                            <small>
+                                📄 Documents: ${data.document_count}<br>
+                                🧩 Chunks: ${data.chunk_count}<br>
+                                🤖 Agents: ${data.agents_available.length}
+                            </small>
+                        `;
+                        loadSalesOverview();
+                    } else if (data.status.includes('Error')) {
+                        statusCard.className = 'status-card error';
+                    }
+                    
+                    document.getElementById('sendBtn').disabled = !data.ready;
+                })
+                .catch(error => {
+                    console.error('Error checking status:', error);
+                });
+        }
+
+        function loadSalesOverview() {
+            fetch('/api/sales-overview')
+                .then(response => response.json())
+                .then(data => {
+                    const salesOverview = document.getElementById('salesOverview');
+                    const salesStats = document.getElementById('salesStats');
+                    
+                    salesStats.innerHTML = `
+                        <div class="sales-stat">
+                            <span>Total Orders:</span>
+                            <strong>${data.total_orders.toLocaleString()}</strong>
+                        </div>
+                        <div class="sales-stat">
+                            <span>Total Revenue:</span>
+                            <strong>$${data.total_revenue.toLocaleString()}</strong>
+                        </div>
+                        <div class="sales-stat">
+                            <span>Avg Order:</span>
+                            <strong>$${data.average_order_value.toFixed(2)}</strong>
+                        </div>
+                        <div class="sales-stat">
+                            <span>Customers:</span>
+                            <strong>${data.unique_customers}</strong>
+                        </div>
+                        <div class="sales-stat">
+                            <span>Menu Items:</span>
+                            <strong>${data.unique_menu_items}</strong>
+                        </div>
+                    `;
+                    
+                    salesOverview.style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error loading sales overview:', error);
+                });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendUserQuery();
+            }
+        }
+
+        function sendQuery(query) {
+            document.getElementById('queryInput').value = query;
+            sendUserQuery();
+        }
+
+        function sendUserQuery() {
+            const queryInput = document.getElementById('queryInput');
+            const query = queryInput.value.trim();
+            
+            if (!query || !isSystemReady) return;
+            
+            // Add user message
+            addMessage(query, 'user');
+            
+            // Clear input
+            queryInput.value = '';
+            
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('sendBtn').disabled = true;
+            
+            // Send query to backend
+            fetch('/api/query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: query,
+                    use_agentic: true
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Hide loading
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('sendBtn').disabled = false;
+                
+                if (data.error) {
+                    addMessage(`Error: ${data.error}`, 'agent');
+                } else {
+                    addAgenticResponse(data);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('sendBtn').disabled = false;
+                addMessage('Sorry, there was an error processing your query.', 'agent');
+            });
+        }
+
+        function addAgenticResponse(data) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message agent strategist';
+            
+            // Clean and format the answer
+            let answer = data.answer || 'No answer provided';
+            
+            // Ensure HTML content is properly displayed
+            answer = answer.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+            
+            let insightsHtml = '';
+            if (data.insights && data.insights.key_points && data.insights.key_points.length > 0) {
+                insightsHtml = `
+                    <div class="insights">
+                        <h4>💡 Key Insights</h4>
+                        <ul>
+                            ${data.insights.key_points.map(insight => `<li>${escapeHtml(insight)}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            let agentsHtml = '';
+            if (data.agents_used && data.agents_used.length > 0) {
+                agentsHtml = `
+                    <div class="agents-used">
+                        <strong>Agents Used:</strong> 
+                        ${data.agents_used.map(agent => `<span class="agent-badge">${escapeHtml(agent)}</span>`).join('')}
+                    </div>
+                `;
+            }
+            
+            let qualityInfo = '';
+            if (data.quality_score && data.quality_score !== 'N/A') {
+                qualityInfo = ` | Quality: ${data.quality_score}/10`;
+            }
+            
+            messageDiv.innerHTML = `
+                <strong>🤖 Agentic Assistant</strong>
+                ${data.confidence ? `<span style="float: right; font-size: 12px;">Confidence: ${escapeHtml(data.confidence)}${qualityInfo}</span>` : ''}
+                <br><br>
+                <div class="answer-content">${answer}</div>
+                ${insightsHtml}
+                ${agentsHtml}
+                <div style="margin-top: 10px; font-size: 12px; color: #6c757d;">
+                    ⏱️ Processing time: ${data.processing_time ? data.processing_time.toFixed(2) + 's' : 'N/A'}
+                </div>
+            `;
+            
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function addMessage(content, sender) {
+            const messagesDiv = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            
+            if (sender === 'user') {
+                messageDiv.innerHTML = `<strong>You:</strong><br>${escapeHtml(content)}`;
+            } else {
+                // For agent messages, allow some HTML but escape user content
+                messageDiv.innerHTML = content;
+            }
+            
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>
