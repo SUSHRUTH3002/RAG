@@ -12,4 +12,5 @@ activate
 .env
 .python-version
 .data/
-venv/
+.venv/
+

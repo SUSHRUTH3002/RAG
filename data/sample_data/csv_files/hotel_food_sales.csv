@@ -1,0 +1,201 @@
+OrderID,OrderTime,CustomerID,MenuItem,Category,Quantity,Price,TotalAmount,PaymentMethod
+1,2023-04-25 12:47:00,Cust_18,Paneer Butter Masala,Main Course,1,112.51,112.51,Credit Card
+2,2023-01-16 11:13:00,Cust_28,Margherita Pizza,Main Course,5,143.47,717.35,Cash
+3,2023-11-29 21:34:00,Cust_36,Grilled Chicken,Main Course,5,401.01,2005.05,Credit Card
+4,2023-03-23 21:27:00,Cust_18,French Fries,Starter,2,324.6,649.2,Cash
+5,2023-02-22 11:24:00,Cust_49,Cheeseburger,Main Course,3,177.74,533.22,UPI
+6,2023-01-23 21:29:00,Cust_39,Margherita Pizza,Main Course,3,523.75,1571.25,UPI
+7,2023-10-10 14:53:00,Cust_25,Mushroom Risotto,Main Course,1,586.56,586.56,Cash
+8,2023-12-27 11:02:00,Cust_24,Paneer Butter Masala,Main Course,5,542.73,2713.65,Credit Card
+9,2023-02-21 16:17:00,Cust_6,Paneer Butter Masala,Main Course,2,486.53,973.06,Credit Card
+10,2023-12-10 14:44:00,Cust_23,Tomato Soup,Starter,3,181.33,543.99,Credit Card
+11,2023-03-25 17:24:00,Cust_11,Ice Cream Sundae,Dessert,1,404.57,404.57,Credit Card
+12,2023-04-28 10:51:00,Cust_21,Veggie Burger,Main Course,5,209.81,1049.05,Cash
+13,2023-04-19 20:31:00,Cust_14,Cheeseburger,Main Course,4,233.87,935.48,UPI
+14,2023-10-15 18:16:00,Cust_9,French Fries,Starter,4,171.44,685.76,Credit Card
+15,2023-07-05 13:08:00,Cust_38,Biryani,Main Course,5,314.22,1571.1,Wallet
+16,2023-03-20 20:10:00,Cust_4,Mushroom Risotto,Main Course,4,145.45,581.8,Cash
+17,2023-11-02 17:33:00,Cust_25,Fish Curry,Main Course,4,398.2,1592.8,Wallet
+18,2023-12-16 18:48:00,Cust_1,Veggie Burger,Main Course,5,530.39,2651.95,Cash
+19,2023-08-21 10:46:00,Cust_28,Veggie Burger,Main Course,3,155.78,467.34,Credit Card
+20,2023-09-17 11:55:00,Cust_49,Ice Cream Sundae,Dessert,3,585.94,1757.82,Credit Card
+21,2023-03-20 15:48:00,Cust_33,Paneer Butter Masala,Main Course,3,520.83,1562.49,Credit Card
+22,2023-11-03 15:31:00,Cust_34,Caesar Salad,Starter,5,576.75,2883.75,Cash
+23,2023-01-30 13:56:00,Cust_20,Pasta Alfredo,Main Course,1,564.55,564.55,Credit Card
+24,2023-09-30 22:08:00,Cust_32,Tandoori Chicken,Main Course,1,142.83,142.83,Cash
+25,2023-09-28 19:27:00,Cust_11,Caesar Salad,Starter,4,573.42,2293.68,UPI
+26,2024-01-01 14:25:00,Cust_45,Grilled Chicken,Main Course,5,477.63,2388.15,Credit Card
+27,2023-03-03 13:14:00,Cust_34,Paneer Butter Masala,Main Course,3,319.05,957.15,Wallet
+28,2023-10-29 13:00:00,Cust_36,Margherita Pizza,Main Course,3,110.52,331.56,Credit Card
+29,2023-02-06 18:15:00,Cust_3,Margherita Pizza,Main Course,1,214.47,214.47,UPI
+30,2023-05-05 22:30:00,Cust_9,Veggie Burger,Main Course,4,207.12,828.48,Wallet
+31,2023-07-01 16:26:00,Cust_7,Fish Curry,Main Course,4,195.2,780.8,Wallet
+32,2023-02-01 16:46:00,Cust_42,Tomato Soup,Starter,1,436.68,436.68,Cash
+33,2023-03-13 16:11:00,Cust_13,Cheeseburger,Main Course,1,224.33,224.33,Wallet
+34,2023-10-09 11:03:00,Cust_5,Veggie Burger,Main Course,4,224.9,899.6,Wallet
+35,2023-03-27 16:31:00,Cust_6,Paneer Butter Masala,Main Course,5,518.01,2590.05,Credit Card
+36,2023-07-14 10:24:00,Cust_4,Tomato Soup,Starter,2,532.33,1064.66,Credit Card
+37,2023-03-21 13:18:00,Cust_45,Veggie Burger,Main Course,4,242.62,970.48,Wallet
+38,2023-06-10 10:03:00,Cust_35,Grilled Chicken,Main Course,1,389.59,389.59,Cash
+39,2023-01-30 18:05:00,Cust_34,Tandoori Chicken,Main Course,4,351.43,1405.72,Credit Card
+40,2023-07-26 11:56:00,Cust_5,Spring Rolls,Starter,2,134.26,268.52,Credit Card
+41,2023-08-03 20:37:00,Cust_3,Tandoori Chicken,Main Course,2,389.46,778.92,Cash
+42,2023-12-09 21:20:00,Cust_17,Tandoori Chicken,Main Course,5,258.18,1290.9,Credit Card
+43,2023-08-23 15:59:00,Cust_43,Grilled Chicken,Main Course,3,297.89,893.67,UPI
+44,2023-02-07 18:13:00,Cust_40,Fish Curry,Main Course,1,104.66,104.66,Cash
+45,2023-05-06 15:18:00,Cust_23,Mushroom Risotto,Main Course,3,166.23,498.69,Cash
+46,2023-11-10 22:41:00,Cust_46,Caesar Salad,Starter,4,516.87,2067.48,UPI
+47,2023-12-06 11:56:00,Cust_36,Mushroom Risotto,Main Course,1,433.93,433.93,UPI
+48,2023-05-20 14:38:00,Cust_7,Caesar Salad,Starter,3,157.71,473.13,Credit Card
+49,2023-09-16 17:16:00,Cust_41,Grilled Chicken,Main Course,3,201.8,605.4,UPI
+50,2023-01-23 10:21:00,Cust_28,Ice Cream Sundae,Dessert,1,146.15,146.15,UPI
+51,2023-08-15 18:45:00,Cust_17,Fish Curry,Main Course,2,418.56,837.12,Credit Card
+52,2023-10-07 10:53:00,Cust_5,French Fries,Starter,5,104.83,524.15,Credit Card
+53,2023-01-22 14:23:00,Cust_28,Cheeseburger,Main Course,5,376.26,1881.3,Credit Card
+54,2023-12-08 11:22:00,Cust_14,Ice Cream Sundae,Dessert,1,549.46,549.46,Credit Card
+55,2023-05-02 12:51:00,Cust_27,Fish Curry,Main Course,5,542.07,2710.35,Credit Card
+56,2023-06-20 22:59:00,Cust_2,Fish Curry,Main Course,2,540.71,1081.42,Credit Card
+57,2023-07-15 10:54:00,Cust_45,French Fries,Starter,2,233.4,466.8,Cash
+58,2023-06-06 22:55:00,Cust_30,Tomato Soup,Starter,2,199.79,399.58,UPI
+59,2023-06-18 14:55:00,Cust_13,Grilled Chicken,Main Course,2,111.83,223.66,Wallet
+60,2023-12-14 18:21:00,Cust_33,Margherita Pizza,Main Course,3,275.57,826.71,Wallet
+61,2023-10-25 14:02:00,Cust_17,Pasta Alfredo,Main Course,1,538.52,538.52,Credit Card
+62,2023-08-12 19:32:00,Cust_47,Margherita Pizza,Main Course,5,317.28,1586.4,UPI
+63,2023-01-23 21:27:00,Cust_13,Margherita Pizza,Main Course,4,549.75,2199.0,UPI
+64,2023-07-06 16:04:00,Cust_35,Pasta Alfredo,Main Course,5,562.79,2813.95,Credit Card
+65,2023-06-03 18:19:00,Cust_43,Paneer Butter Masala,Main Course,3,411.58,1234.74,Cash
+66,2023-10-11 12:12:00,Cust_45,Paneer Butter Masala,Main Course,4,263.09,1052.36,UPI
+67,2023-07-27 18:53:00,Cust_12,French Fries,Starter,4,438.66,1754.64,UPI
+68,2023-08-27 17:28:00,Cust_28,Pasta Alfredo,Main Course,3,243.46,730.38,UPI
+69,2023-12-04 11:18:00,Cust_48,Paneer Butter Masala,Main Course,2,355.59,711.18,Credit Card
+70,2023-12-11 14:14:00,Cust_49,Mushroom Risotto,Main Course,5,267.59,1337.95,Credit Card
+71,2023-09-01 19:54:00,Cust_3,Fish Curry,Main Course,2,173.68,347.36,Credit Card
+72,2023-12-23 16:31:00,Cust_41,Fish Curry,Main Course,1,327.71,327.71,Credit Card
+73,2023-02-24 22:27:00,Cust_45,French Fries,Starter,2,173.79,347.58,Cash
+74,2023-01-26 18:15:00,Cust_45,Grilled Chicken,Main Course,2,502.05,1004.1,Wallet
+75,2023-08-15 19:52:00,Cust_30,Ice Cream Sundae,Dessert,1,328.23,328.23,UPI
+76,2023-03-23 21:55:00,Cust_36,Biryani,Main Course,5,313.37,1566.85,Wallet
+77,2023-09-24 17:40:00,Cust_16,Tomato Soup,Starter,4,229.6,918.4,UPI
+78,2023-05-01 14:21:00,Cust_46,Grilled Chicken,Main Course,3,319.94,959.82,UPI
+79,2023-07-16 21:09:00,Cust_10,Cheeseburger,Main Course,5,140.29,701.45,Credit Card
+80,2023-10-05 17:26:00,Cust_27,Biryani,Main Course,2,132.11,264.22,UPI
+81,2023-10-22 16:30:00,Cust_25,Pasta Alfredo,Main Course,2,516.45,1032.9,Cash
+82,2023-10-03 21:47:00,Cust_25,Pasta Alfredo,Main Course,3,249.31,747.93,Wallet
+83,2023-05-20 16:31:00,Cust_32,Mushroom Risotto,Main Course,5,548.91,2744.55,Credit Card
+84,2023-03-26 17:58:00,Cust_44,Pasta Alfredo,Main Course,4,268.06,1072.24,Wallet
+85,2023-02-12 20:27:00,Cust_26,Caesar Salad,Starter,5,367.06,1835.3,Cash
+86,2023-06-17 13:29:00,Cust_17,Caesar Salad,Starter,4,190.86,763.44,Wallet
+87,2023-08-04 14:53:00,Cust_25,Cheeseburger,Main Course,3,480.61,1441.83,UPI
+88,2023-06-29 13:41:00,Cust_35,Margherita Pizza,Main Course,4,109.69,438.76,Cash
+89,2023-01-11 19:09:00,Cust_16,Margherita Pizza,Main Course,1,477.12,477.12,Credit Card
+90,2023-08-27 21:16:00,Cust_8,Grilled Chicken,Main Course,2,336.78,673.56,Credit Card
+91,2023-03-25 14:06:00,Cust_39,Fish Curry,Main Course,3,183.89,551.67,Cash
+92,2023-07-23 21:12:00,Cust_37,Tandoori Chicken,Main Course,1,564.44,564.44,Wallet
+93,2023-02-22 21:49:00,Cust_41,Margherita Pizza,Main Course,5,445.31,2226.55,Credit Card
+94,2023-06-27 18:27:00,Cust_37,Veggie Burger,Main Course,5,502.76,2513.8,Cash
+95,2023-01-07 16:52:00,Cust_42,Paneer Butter Masala,Main Course,3,134.48,403.44,UPI
+96,2023-12-29 12:27:00,Cust_24,Tomato Soup,Starter,1,316.76,316.76,Wallet
+97,2023-08-27 16:52:00,Cust_18,Caesar Salad,Starter,5,582.74,2913.7,Wallet
+98,2023-05-23 17:15:00,Cust_16,Biryani,Main Course,5,234.2,1171.0,Cash
+99,2023-06-22 10:31:00,Cust_43,Fish Curry,Main Course,4,384.92,1539.68,Wallet
+100,2023-05-13 15:17:00,Cust_14,Spring Rolls,Starter,3,190.92,572.76,UPI
+101,2023-09-22 13:05:00,Cust_18,Ice Cream Sundae,Dessert,5,450.59,2252.95,Cash
+102,2023-12-20 17:41:00,Cust_49,Grilled Chicken,Main Course,4,344.29,1377.16,Credit Card
+103,2023-05-31 13:25:00,Cust_2,Biryani,Main Course,4,324.09,1296.36,Cash
+104,2023-08-31 18:33:00,Cust_38,Biryani,Main Course,2,253.1,506.2,UPI
+105,2023-06-30 21:29:00,Cust_36,Cheeseburger,Main Course,4,598.32,2393.28,UPI
+106,2023-06-11 11:47:00,Cust_8,Veggie Burger,Main Course,3,225.7,677.1,Credit Card
+107,2023-05-22 21:37:00,Cust_48,Mushroom Risotto,Main Course,2,195.77,391.54,Wallet
+108,2023-06-01 13:23:00,Cust_7,Fish Curry,Main Course,5,398.4,1992.0,Credit Card
+109,2023-05-21 10:03:00,Cust_35,Caesar Salad,Starter,3,107.07,321.21,Credit Card
+110,2023-02-22 10:36:00,Cust_9,Mushroom Risotto,Main Course,3,448.71,1346.13,Wallet
+111,2023-01-27 14:55:00,Cust_22,Veggie Burger,Main Course,4,339.36,1357.44,Credit Card
+112,2023-02-07 19:40:00,Cust_26,Tomato Soup,Starter,1,511.06,511.06,Wallet
+113,2023-02-13 13:07:00,Cust_37,Paneer Butter Masala,Main Course,1,175.86,175.86,UPI
+114,2023-09-25 16:28:00,Cust_40,Mushroom Risotto,Main Course,4,403.16,1612.64,Credit Card
+115,2023-06-06 19:39:00,Cust_38,Ice Cream Sundae,Dessert,4,248.68,994.72,Wallet
+116,2023-11-17 13:16:00,Cust_7,Pasta Alfredo,Main Course,5,580.05,2900.25,Credit Card
+117,2023-03-22 10:26:00,Cust_12,Paneer Butter Masala,Main Course,1,178.53,178.53,Cash
+118,2023-05-28 21:18:00,Cust_3,Tomato Soup,Starter,5,334.96,1674.8,Credit Card
+119,2023-11-17 19:42:00,Cust_15,Biryani,Main Course,4,135.59,542.36,UPI
+120,2023-11-28 12:58:00,Cust_35,Fish Curry,Main Course,2,312.57,625.14,Credit Card
+121,2023-11-01 21:52:00,Cust_11,Veggie Burger,Main Course,2,135.7,271.4,UPI
+122,2023-12-25 16:17:00,Cust_30,Tandoori Chicken,Main Course,3,319.58,958.74,UPI
+123,2023-08-10 21:20:00,Cust_6,Mushroom Risotto,Main Course,5,346.9,1734.5,Cash
+124,2023-12-11 14:36:00,Cust_15,Tandoori Chicken,Main Course,3,112.93,338.79,Cash
+125,2023-05-23 12:37:00,Cust_42,Pasta Alfredo,Main Course,2,335.25,670.5,Wallet
+126,2023-07-29 15:20:00,Cust_31,French Fries,Starter,4,584.53,2338.12,UPI
+127,2023-12-22 17:18:00,Cust_22,Paneer Butter Masala,Main Course,1,528.87,528.87,Wallet
+128,2023-08-21 11:20:00,Cust_36,Paneer Butter Masala,Main Course,4,506.78,2027.12,Cash
+129,2023-09-21 10:42:00,Cust_50,Veggie Burger,Main Course,3,157.96,473.88,Wallet
+130,2023-09-23 15:39:00,Cust_4,Spring Rolls,Starter,5,330.99,1654.95,Credit Card
+131,2023-04-15 14:35:00,Cust_49,Fish Curry,Main Course,4,412.7,1650.8,Cash
+132,2023-03-04 10:40:00,Cust_45,Caesar Salad,Starter,3,319.06,957.18,Wallet
+133,2023-10-10 16:05:00,Cust_20,Tandoori Chicken,Main Course,2,454.89,909.78,Cash
+134,2023-09-13 21:18:00,Cust_8,Grilled Chicken,Main Course,1,330.72,330.72,Credit Card
+135,2023-05-05 17:35:00,Cust_31,Mushroom Risotto,Main Course,3,307.75,923.25,Wallet
+136,2023-02-05 14:49:00,Cust_39,Caesar Salad,Starter,4,195.31,781.24,Credit Card
+137,2023-01-02 14:46:00,Cust_33,Fish Curry,Main Course,4,269.94,1079.76,UPI
+138,2023-03-18 17:34:00,Cust_43,Veggie Burger,Main Course,5,389.96,1949.8,Wallet
+139,2023-08-22 15:55:00,Cust_49,Tomato Soup,Starter,3,266.22,798.66,Wallet
+140,2023-01-23 15:47:00,Cust_15,Grilled Chicken,Main Course,2,385.9,771.8,Wallet
+141,2023-09-11 10:08:00,Cust_43,Tomato Soup,Starter,4,293.04,1172.16,Credit Card
+142,2023-02-21 18:58:00,Cust_7,Mushroom Risotto,Main Course,5,266.0,1330.0,Wallet
+143,2023-02-08 17:50:00,Cust_27,Tomato Soup,Starter,1,461.22,461.22,Credit Card
+144,2023-06-18 20:54:00,Cust_26,Veggie Burger,Main Course,3,411.63,1234.89,Cash
+145,2023-10-05 10:39:00,Cust_41,Mushroom Risotto,Main Course,4,577.07,2308.28,Wallet
+146,2023-02-16 16:06:00,Cust_19,Margherita Pizza,Main Course,2,415.58,831.16,Credit Card
+147,2023-01-15 10:20:00,Cust_45,Fish Curry,Main Course,1,321.84,321.84,UPI
+148,2023-03-16 13:33:00,Cust_24,Fish Curry,Main Course,1,246.68,246.68,Wallet
+149,2023-03-31 11:39:00,Cust_12,French Fries,Starter,5,440.9,2204.5,Credit Card
+150,2023-10-26 12:14:00,Cust_16,Spring Rolls,Starter,4,409.86,1639.44,Wallet
+151,2023-08-27 14:43:00,Cust_43,Tomato Soup,Starter,3,329.79,989.37,Cash
+152,2023-11-24 16:44:00,Cust_23,Mushroom Risotto,Main Course,2,136.93,273.86,UPI
+153,2023-09-05 11:15:00,Cust_13,Veggie Burger,Main Course,4,522.65,2090.6,Wallet
+154,2023-01-12 20:25:00,Cust_19,French Fries,Starter,5,279.48,1397.4,UPI
+155,2023-11-07 21:31:00,Cust_44,Veggie Burger,Main Course,1,382.96,382.96,Cash
+156,2023-04-23 20:12:00,Cust_15,Spring Rolls,Starter,3,487.87,1463.61,UPI
+157,2023-11-18 11:57:00,Cust_47,Tandoori Chicken,Main Course,3,438.88,1316.64,Credit Card
+158,2023-10-24 15:46:00,Cust_29,Paneer Butter Masala,Main Course,1,254.47,254.47,Cash
+159,2023-03-31 13:08:00,Cust_21,Caesar Salad,Starter,1,554.81,554.81,Wallet
+160,2023-03-26 14:58:00,Cust_24,Fish Curry,Main Course,5,538.23,2691.15,UPI
+161,2023-02-28 17:04:00,Cust_19,Spring Rolls,Starter,4,583.69,2334.76,UPI
+162,2023-10-13 15:05:00,Cust_47,Caesar Salad,Starter,2,530.07,1060.14,Wallet
+163,2023-08-21 15:43:00,Cust_35,Fish Curry,Main Course,4,106.96,427.84,Cash
+164,2023-02-25 20:14:00,Cust_41,Biryani,Main Course,3,392.28,1176.84,UPI
+165,2023-11-09 13:41:00,Cust_36,Tomato Soup,Starter,1,409.77,409.77,UPI
+166,2023-03-01 12:02:00,Cust_20,Margherita Pizza,Main Course,4,554.69,2218.76,Wallet
+167,2023-05-01 18:08:00,Cust_8,Pasta Alfredo,Main Course,3,597.96,1793.88,Cash
+168,2023-10-28 21:46:00,Cust_48,French Fries,Starter,4,285.51,1142.04,Wallet
+169,2023-05-24 10:44:00,Cust_32,Caesar Salad,Starter,4,427.46,1709.84,Wallet
+170,2023-02-20 20:23:00,Cust_16,Cheeseburger,Main Course,2,321.69,643.38,UPI
+171,2023-03-04 17:05:00,Cust_18,Mushroom Risotto,Main Course,3,130.28,390.84,Credit Card
+172,2023-01-26 22:21:00,Cust_39,Paneer Butter Masala,Main Course,2,420.85,841.7,Cash
+173,2023-10-11 13:37:00,Cust_14,Grilled Chicken,Main Course,2,493.49,986.98,Cash
+174,2023-05-22 12:08:00,Cust_10,Grilled Chicken,Main Course,2,264.28,528.56,Cash
+175,2023-03-09 10:22:00,Cust_8,Mushroom Risotto,Main Course,3,499.26,1497.78,Cash
+176,2023-05-16 10:08:00,Cust_2,Fish Curry,Main Course,2,394.43,788.86,Credit Card
+177,2023-09-01 17:49:00,Cust_48,Biryani,Main Course,4,363.04,1452.16,Cash
+178,2023-11-11 10:46:00,Cust_29,Cheeseburger,Main Course,5,396.83,1984.15,Credit Card
+179,2023-02-01 17:54:00,Cust_42,Fish Curry,Main Course,5,250.82,1254.1,Cash
+180,2023-02-07 11:20:00,Cust_32,French Fries,Starter,4,443.05,1772.2,Wallet
+181,2023-07-15 19:33:00,Cust_18,Tandoori Chicken,Main Course,2,132.84,265.68,UPI
+182,2023-12-26 11:54:00,Cust_28,Veggie Burger,Main Course,4,352.78,1411.12,Cash
+183,2023-08-20 13:26:00,Cust_14,Paneer Butter Masala,Main Course,5,460.42,2302.1,Wallet
+184,2023-06-10 16:20:00,Cust_47,Cheeseburger,Main Course,4,299.37,1197.48,Cash
+185,2023-02-04 11:53:00,Cust_10,Paneer Butter Masala,Main Course,3,287.15,861.45,Wallet
+186,2023-03-08 18:03:00,Cust_48,Margherita Pizza,Main Course,1,315.94,315.94,UPI
+187,2023-07-30 15:55:00,Cust_43,Tandoori Chicken,Main Course,5,380.84,1904.2,Cash
+188,2023-05-28 19:19:00,Cust_47,Paneer Butter Masala,Main Course,4,534.05,2136.2,Cash
+189,2023-12-03 17:14:00,Cust_14,Cheeseburger,Main Course,1,388.96,388.96,Credit Card
+190,2023-02-28 22:17:00,Cust_36,Spring Rolls,Starter,1,275.06,275.06,UPI
+191,2023-11-08 20:53:00,Cust_36,Tandoori Chicken,Main Course,2,503.61,1007.22,Cash
+192,2023-06-23 15:00:00,Cust_18,Biryani,Main Course,3,114.48,343.44,UPI
+193,2023-03-14 21:40:00,Cust_26,Caesar Salad,Starter,2,383.16,766.32,Cash
+194,2023-08-03 17:21:00,Cust_14,Pasta Alfredo,Main Course,1,473.06,473.06,Wallet
+195,2023-01-27 12:10:00,Cust_21,Caesar Salad,Starter,3,255.82,767.46,Cash
+196,2023-08-15 20:27:00,Cust_6,Fish Curry,Main Course,5,124.88,624.4,UPI
+197,2023-09-20 11:22:00,Cust_18,Tomato Soup,Starter,5,321.02,1605.1,Credit Card
+198,2023-09-27 20:19:00,Cust_44,French Fries,Starter,1,241.62,241.62,Wallet
+199,2023-01-04 13:19:00,Cust_39,Pasta Alfredo,Main Course,2,297.63,595.26,Cash
+200,2023-03-03 10:31:00,Cust_19,Grilled Chicken,Main Course,2,482.08,964.16,UPI
